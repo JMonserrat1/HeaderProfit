@@ -1,0 +1,193 @@
+:root{
+    --color-primario: #ff8a00;
+    --color-secundario: rgb(255, 241, 241);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500px;
+    font-family: sans-serif;
+    padding: 10px;
+    background-color: rgb(242, 249, 255);
+    margin:0 4%;
+}
+
+nav a {
+    text-decoration: none !important;
+    color: black !important;
+    position: relative;
+    border-bottom: none !important; /* Utiliza !important para asegurarte de que este estilo se aplique */
+    outline: none; /* Elimina el contorno al hacer clic en el enlace */
+    box-shadow: none; /* Elimina cualquier sombra alrededor del enlace */
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    /* Ajusta el tamaño de la línea según sea necesario */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Ajusta el grosor de la línea según sea necesario */
+    background-color: var(--color-primario);
+    /* Cambia el color de la línea según tu preferencia */
+}
+
+
+nav .logo{
+    color: var(--color-primario);
+    width: 90px;
+    height: 70px;
+}
+
+
+nav .logo:hover {
+    scale: 1.1;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+#toggler,
+label {
+    display: none;
+}
+
+label i {
+    color: black;
+}
+
+label img {
+    height: 36px;
+    width: 36px;
+}
+
+
+
+
+/*SECTION DE CONTACTO*/
+.contacto {
+    background:
+        linear-gradient(90deg, rgba(76, 77, 77, 0.712) 0%, rgba(70, 70, 70, 0.622) 49%, rgba(0, 0, 0, 0.505) 79%),
+        url(/assets/contacto-2.jpg);
+    background-size: cover;
+    color: var(--color-primario);
+    padding: 70px 10px;
+    
+}
+
+.contacto .contenedor-contacto {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contacto h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.contacto .contenedor-contacto .fila {
+    display: flex;
+}
+
+.contacto .contenedor-contacto .fila .col {
+    width: 50%;
+}
+
+.contacto .contenedor-contacto .fila .col .info p {
+    color: #fff;
+}
+
+.contacto .contenedor-contacto .info {
+    margin-bottom: 30px;
+    border-left: 3px solid black;
+    padding-left: 8px;
+}
+
+/*FOOTER */
+
+footer{
+    text-align: center;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 2%;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 770px) {
+    
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    label {
+        display: inline-flex;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        transition: all;
+    }
+    
+    .contacto .fila {
+        display: block !important;
+    }
+
+    .contacto .fila .col {
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .contacto .fila .col .info {
+        float: none;
+        font-size: 12px;
+        width: 35%;
+        text-align: left;
+    }
+
+    .contacto .fila .col {
+        padding-left: 10%;
+    }
+
+    .location {
+        margin-top: 3%;
+        width: 80%;
+        height: 250px;
+        margin-left: 10%;
+    }
+
+    #section-noticias {
+        margin-top: 17%;
+    }
+}

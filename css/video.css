@@ -1,0 +1,154 @@
+:root{
+    --color-primario: #ff8a00;
+    --color-secundario: rgb(255, 241, 241);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500px;
+    font-family: sans-serif;
+    padding: 10px;
+    background-color: rgb(242, 249, 255);
+    margin:0 4%;
+}
+
+nav a {
+    text-decoration: none !important;
+    color: black !important;
+    position: relative;
+    border-bottom: none !important; /* Utiliza !important para asegurarte de que este estilo se aplique */
+    outline: none; /* Elimina el contorno al hacer clic en el enlace */
+    box-shadow: none; /* Elimina cualquier sombra alrededor del enlace */
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    /* Ajusta el tamaño de la línea según sea necesario */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Ajusta el grosor de la línea según sea necesario */
+    background-color: var(--color-primario);
+    /* Cambia el color de la línea según tu preferencia */
+}
+
+
+nav .logo{
+    color: var(--color-primario);
+    width: 90px;
+    height: 70px;
+}
+
+
+nav .logo:hover {
+    scale: 1.1;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+#toggler,
+label {
+    display: none;
+}
+
+label i {
+    color: black;
+}
+
+label img {
+    height: 36px;
+    width: 36px;
+}
+
+/*VIDEOS */
+.informacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.bloque-informacion {
+    flex: 0 1 calc(50% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.bloque-informacion h2 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.bloque-informacion p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.bloque-informacion video {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+footer{
+    text-align: center;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 2%;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 770px) {
+    
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    label {
+        display: inline-flex;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        transition: all;
+    }
+
+    .bloque-informacion {
+        flex-basis: calc(100% - 20px);
+    }
+}

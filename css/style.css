@@ -1,0 +1,597 @@
+:root{
+    --color-primario: #ff8a00;
+    --color-secundario: rgb(255, 241, 241);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500px;
+    font-family: sans-serif;
+    padding: 10px;
+    background-color: rgb(242, 249, 255);
+    margin:0 4%;
+}
+
+nav a {
+    text-decoration: none !important;
+    color: black !important;
+    position: relative;
+    border-bottom: none !important; /* Utiliza !important para asegurarte de que este estilo se aplique */
+    outline: none; /* Elimina el contorno al hacer clic en el enlace */
+    box-shadow: none; /* Elimina cualquier sombra alrededor del enlace */
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    /* Ajusta el tamaño de la línea según sea necesario */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Ajusta el grosor de la línea según sea necesario */
+    background-color: var(--color-primario);
+}
+
+
+nav .logo{
+    width: 90px;
+    height: 70px;
+    color: var(--color-primario);
+
+}
+
+nav .logo:hover {
+    scale: 1.1;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+#toggler,
+label {
+    display: none;
+}
+
+label i {
+    color: black;
+}
+
+label img {
+    height: 36px;
+    width: 36px;
+}
+
+/* PRINCIPAL */
+.div-gral {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background-color: #f4f4f4;
+}
+
+.gral-img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.gral-text {
+    flex: 1;
+    margin-left: 5%;
+    font-size: 18px;
+    color: #333;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button a:hover {
+    background-color: rgb(255, 136, 0);
+    scale: 1.1;
+    transition: all;
+}
+
+
+.presentation {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+}
+
+.presentation img {
+    width: 100%;
+    display: block;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.presentation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Opacidad negra */
+    z-index: 1; /* Asegura que la capa de opacidad esté detrás del texto */
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Asegura que el texto esté delante de la capa de opacidad */
+    text-align: center; /* Centrar el texto horizontalmente */
+    color: white; /* Color del texto */
+}
+
+.text h1 {
+    font-size: 3em;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 0.5em;
+    color: var(--color-primario);
+}
+
+.text p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+/*SECTION DE SERVICIOS*/
+
+.Servicios{
+    margin-top: 8%;
+    margin-bottom: 5%;
+    position: relative;
+    height: 100%;
+    background-image: url(/assets/header2-inicio.jpg);
+    object-fit: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+
+
+/* Aplicar filtro de superposición para oscurecer la imagen de fondo */
+.Servicios::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia el valor alfa para ajustar la opacidad */
+}
+
+.Servicios .slider-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+}
+
+.Servicios .slide {
+    position: relative;
+    margin: 5% 0 5% 0;
+    width: 100%;
+    display: none;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* Sombra difuminada */
+    overflow: hidden;
+}
+
+.Servicios .slide img {
+    width: 100%;
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto;
+    max-height: 500px; /* Establece la altura máxima deseada */
+    object-fit: cover;
+    display: block;
+}
+
+.slide:hover{
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+.Servicios .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Servicios .text-overlay h2, .Servicios .text-overlay p {
+    margin: 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*UTILIZACION */
+.utilizacion {
+    margin: 50px auto;
+    width: 80%;
+    background-color: #f2f2f2; /* Cambia el color de fondo según tu preferencia */
+    padding: 20px;
+    border-radius: 10px; /* Agregamos bordes redondeados al contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos una sombra suave */
+}
+
+.utilizacion-gral {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.utilizacion-text {
+    flex: 1;
+}
+
+.utilizacion-img {
+    flex: 1;
+}
+
+.utilizacion-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.utilizacion-text h3 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.utilizacion-text ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.utilizacion-text ul li {
+    margin-bottom: 10px;
+}
+
+.utilizacion-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/*HELP */
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.caja {
+    text-align: center;
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    min-height: 150px;
+    background-color: var(--color-primario); /* Azul claro como ejemplo */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados para una apariencia más suave */
+    transition: background-color 0.3s ease; /* Transición suave para cambios de color */
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2); /* Sombra difuminada */
+
+}
+
+.caja:hover {
+    background-color: rgb(255, 136, 0); /* Cambia el color al azul más oscuro al pasar el cursor sobre la caja */
+}
+
+.caja i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.caja p {
+    font-size: 1em;
+}
+
+.caja button a{
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 5px;
+    background-color: rgb(33,37,41);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.caja ul {
+    list-style: none;
+}
+
+.caja button {
+    margin-top: 20px;
+    border-radius: 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.caja button a:hover {
+    background-color: rgb(13, 14, 15);
+    scale: 1.1;
+    transition: all;
+}
+
+/*FOOTER */
+.footer {
+    margin-top: 5%;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer h4 {
+    color: var(--color-primario);
+}
+
+/* Estilos para la sección de la información de contacto */
+.footer-bottom {
+    background-color: #333;
+    padding: 10px 0;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+}
+
+/* Estilos para los enlaces rápidos */
+.footer ul.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.footer ul.list-unstyled a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer ul.list-unstyled a:hover {
+    color: #0099ff;
+}
+
+/* Estilos para las redes sociales */
+.footer-bottom .social-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom .social-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-bottom .social-buttons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-bottom .social-buttons a:hover {
+    color: #0099ff;
+}
+
+.fa-brands,
+.fab {
+    padding: 0 12px;
+}
+
+
+
+
+
+
+
+/*RESPONSIVE */
+@media screen and (max-width: 770px) {
+
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    label {
+        display: inline-flex;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 25px;
+        transition: all;
+    }
+
+    .Servicios .slider-container {
+        width: 90%; /* Ajusta el ancho del contenedor del slider para dispositivos móviles */
+        margin: auto;
+    }
+
+    .Servicios .slide {
+        margin-bottom: 5%;
+    }
+
+    .Servicios .slide img {
+        width: 100%;
+        max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+        height: auto;
+        max-height: 260px; /* Establece la altura máxima deseada */
+        object-fit: cover;
+        display: block;
+    }
+
+    .prev, .next {
+        font-size: 14px; /* Reduce el tamaño de las flechas para dispositivos móviles */
+        padding: 10px;
+        margin-top: -15px;
+    }
+
+    .text h1 {
+        font-size: 1.8em; /* Reduce el tamaño del título para dispositivos móviles */
+    }
+
+    .text p {
+        font-size: 1em; /* Reduce el tamaño del texto para dispositivos móviles */
+    }
+
+    .utilizacion-gral{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .utilizacion-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .utilizacion-img img{
+        display: flex;
+        width: 80%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6%;
+    }
+
+    .contenedor{
+        flex-wrap: wrap;
+    }
+
+    .caja{
+        margin: 6% 0;
+    }
+
+    .div-gral {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gral-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gral-text {
+        margin-top: 20px;
+        text-align: center;
+        margin-right: 7%;
+    }
+
+    .footer-bottom .social-buttons{
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 0;
+        display: flex;
+        text-align: center;
+    }
+
+    .footer h4 {
+        color: var(--color-primario);
+        display: flex;
+        justify-content: center;
+    }
+
+   .footer  img {
+        vertical-align: middle;
+        border-style: none;
+        margin-left: 10px;
+    }
+
+    .text h1{
+        font-size: 2em;
+    }
+}
+
+
+
+
